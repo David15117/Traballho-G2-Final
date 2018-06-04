@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
     <h1>Disciplinas</h1>
     <hr>
     <div *ngIf="status_lista === false" class="alert alert-danger">
@@ -23,4 +23,34 @@
         <app-editor-de-disciplina [disciplina]="editando" (onSalvar)="salvar()" (onCancelar)="cancelar()">
         </app-editor-de-disciplina>
     </div>
+    <div>
+        <hr>
+        <app-lista-de-turmas>
+            <h2>Cadastrar ou editar</h2>
+            <p>Use este formulário para cadastrar ou editar uma disciplina.</p>
+            <div *ngIf="salvar_ok" class="alert alert-success">
+                <strong>Sucesso!</strong> Os dados da disciplina foram salvos com sucesso.
+            </div>
+            <app-editor-de-disciplina [disciplina]="editando" (onSalvar)="salvar()" (onCancelar)="cancelar()">
+            </app-editor-de-disciplina>
+        </app-lista-de-turmas>
+        <hr>
+    </div>
+    <div>
+        <hr>
+        <app-lista-de-professor>
+            <h2>Cadastrar ou editar</h2>
+            <p>Use este formulário para cadastrar ou editar uma disciplina.</p>
+            <div *ngIf="salvar_ok" class="alert alert-success">
+                <strong>Sucesso!</strong> Os dados da disciplina foram salvos com sucesso.
+            </div>
+            <app-editor-de-disciplina [disciplina]="editando" (onSalvar)="salvar()" (onCancelar)="cancelar()">
+            </app-editor-de-disciplina>
+        </app-lista-de-professor>
+        <hr>
+    </div>
+    <div>
+        <app-lista-de-alunos></app-lista-de-alunos>
+    </div>
+
 </div>
